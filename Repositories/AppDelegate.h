@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CustomNavigationController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) CustomNavigationController *navigationController;
+@property (weak, nonatomic) id<BaseProtocol> loaderView;
 
 @end
 

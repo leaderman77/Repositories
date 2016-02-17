@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "LanguageSelectController.h"
+#import "CustomNavigationController.h"
+#import "RepositoriesTypeController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+//    Rep *languageViewController = [[LanguageSelectController alloc] init];
+    
+    RepositoriesTypeController *repositoriesTypeController = [[RepositoriesTypeController alloc]init];
+    
+    self.navigationController = [[CustomNavigationController alloc] initWithRootViewController:repositoriesTypeController];
+    self.navigationController.navigationBarHidden = YES;
+    self.window.rootViewController = self.navigationController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
